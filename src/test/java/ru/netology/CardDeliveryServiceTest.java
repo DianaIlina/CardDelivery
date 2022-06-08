@@ -12,8 +12,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -31,8 +29,9 @@ public class CardDeliveryServiceTest {
     @BeforeEach
     public void setUp2() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
+
         options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
