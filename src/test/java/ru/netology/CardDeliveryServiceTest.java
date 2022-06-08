@@ -1,6 +1,5 @@
 package ru.netology;
 
-import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -52,7 +51,6 @@ public class CardDeliveryServiceTest {
         String deliveryDate = format1.format(ldt);
 
 
-        Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
 
         $x("//*/span[@data-test-id=\"city\"]//input").setValue("Москва");
