@@ -1,5 +1,6 @@
 package ru.netology;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -18,7 +19,7 @@ public class CardDeliveryServiceTest {
         DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH);
         String deliveryDate = format1.format(ldt);
 
-
+        Configuration.headless = true;
         open("http://localhost:9999");
 
         $x("//*/span[@data-test-id=\"city\"]//input").setValue("Москва");
